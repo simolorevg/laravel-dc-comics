@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <ul>
+    <div class="comic-row">
         @foreach ($comics as $comicitem)
-            <li>{{ $comicitem->title }}</li>
+            <div class="comic-col">
+
+            </div>
         @endforeach
-    </ul>
+    </div>
 @endsection
