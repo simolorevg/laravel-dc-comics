@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
-    <h2 class="text-center">Tutti i fumetti</h2>
+    <div class="d-flex justify-content-center p-2">
+        <h2>Tutti i fumetti</h2>
+        <a class="btn btn-warning mx-2" href="{{ route('pages.create') }}">Inserisci un fumetto</a>
+    </div>
     <div class="comic-row">
         @foreach ($comics as $comicitem)
             <div class="comic-col">

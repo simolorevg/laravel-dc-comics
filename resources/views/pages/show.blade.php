@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <a class="btn btn-primary" href="{{ route('pages.index') }}">Indietro</a>
     <div class="container">
         <h2>{{ $comic->title }}</h2>
         <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
