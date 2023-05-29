@@ -1,4 +1,29 @@
 .comic-row {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .comic-col {
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+
+        .comic-image {
+            width: 100%;
+            height: 70%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .comic-text {
+            width: 100%;
+            height: calc(100% - 70%);
+        }
+    }
 }
