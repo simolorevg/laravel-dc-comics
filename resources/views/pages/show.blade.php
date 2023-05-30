@@ -8,5 +8,8 @@
         <p>{{ $comic->Type }}</p>
         <p>In vendita dal: {{ $comic->sale_date }}. Prezzo: {{ $comic->price }}</p>
         <p>{{ $comic->description }}</p>
+        <a class="btn btn-warning" href="{{ route('pages.create', $comic->id) }}">
+            Modifica elemento
+        </a>
     </div>
 @endsection
