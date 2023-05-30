@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <form action="{{ route('comics.update', ['id' => $comic->id]) }}" method="POST">
+    <form action="{{ route('comics.update', $comic) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
-            <input type="text" class="form-control" id="title" name="title" value={{ $comic->title }}>
+            <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">
         </div>
 
         <div class="mb-3">
@@ -30,13 +30,12 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Data d'uscita</label>
-            <input type="text" class="form-control" id="sale_date" name="sale_date" value={{ $comic->sale_date }}>
+            <input type="text" class="form-control" id="sale_date" name="sale_date" value="{{ $comic->sale_date }}">
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Tipologia</label>
             <input type="text" class="form-control" id="type" name="Type" value="{{ $comic->Type }}">
         </div>
         <button type="submit" class="btn btn-success">INVIA</button>
-    </form>
     </form>
 @endsection
