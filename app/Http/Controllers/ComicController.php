@@ -68,8 +68,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
+    public function edit($id)
     {
+        $comic = Comic::findOrFail($id);
         return view('pages.edit', compact('comic'));
     }
 
@@ -93,8 +94,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('pages.index');
     }
 }
