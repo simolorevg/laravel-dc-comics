@@ -2,7 +2,7 @@
 @section('content')
     <h2 class="text-center">Aggiungi un fumetto</h2>
     <div class="create-container">
-        <form action="{{ route('pages.store') }}" method="POST">
+        <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
