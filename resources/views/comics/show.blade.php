@@ -11,10 +11,11 @@
         <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id) }}">
             Modifica elemento
         </a>
-        <form action="{{ route('comics.destroy', $comic->id) }}">
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
             @csrf
             @method('DELETE')
-            <button class="btn btn-danger" type="submit" value="Delete"> Elimina</button>
+            <button class="btn btn-danger" type="submit" onclick="return confirm('Do you want delete this item?')"
+                value="Delete"> Elimina</button>
         </form>
     </div>
 @endsection

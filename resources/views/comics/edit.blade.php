@@ -3,6 +3,15 @@
     <form action="{{ route('comics.update', $comic) }}" method="POST">
         @csrf
         @method('PUT')
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="mb-3">
             <label for="title" class="form-label">Titolo</label>
             <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">
@@ -30,7 +39,7 @@
         </div>
         <div class="mb-3">
             <label for="sale_date" class="form-label">Data d'uscita</label>
-            <input type="text" class="form-control" id="sale_date" name="sale_date" value="{{ $comic->sale_date }}">
+            <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{ $comic->sale_date }}">
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Tipologia</label>
